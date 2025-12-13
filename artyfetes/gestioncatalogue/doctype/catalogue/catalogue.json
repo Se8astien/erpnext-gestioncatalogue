@@ -1,0 +1,143 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:titre",
+ "creation": "2025-12-12 17:03:03.520746",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_e0ai",
+  "titre",
+  "actif",
+  "visible_sur_site",
+  "niveau",
+  "html_univers",
+  "articles",
+  "lft",
+  "rgt",
+  "is_group",
+  "old_parent",
+  "parent_catalogue"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_e0ai",
+   "fieldtype": "Section Break",
+   "label": "Nouveau"
+  },
+  {
+   "fieldname": "titre",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Titre",
+   "no_copy": 1,
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "actif",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Actif",
+   "no_copy": 1,
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "visible_sur_site",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Visible sur le site",
+   "reqd": 1
+  },
+  {
+   "fieldname": "niveau",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Niveau",
+   "options": "Catalogue\nUnivers",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.niveau==\"Catalogue\"",
+   "fieldname": "html_univers",
+   "fieldtype": "HTML",
+   "ignore_user_permissions": 1,
+   "label": "Aper\u00e7u Univers",
+   "options": "Catalogue"
+  },
+  {
+   "depends_on": "eval:doc.niveau==\"Univers\"\n",
+   "fieldname": "articles",
+   "fieldtype": "Table",
+   "label": "Articles",
+   "options": "Catalogue Article"
+  },
+  {
+   "fieldname": "lft",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Left",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "rgt",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Right",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_group",
+   "fieldtype": "Check",
+   "label": "Is Group"
+  },
+  {
+   "fieldname": "old_parent",
+   "fieldtype": "Link",
+   "label": "Old Parent",
+   "options": "Catalogue"
+  },
+  {
+   "fieldname": "parent_catalogue",
+   "fieldtype": "Link",
+   "ignore_user_permissions": 1,
+   "label": "Parent Catalogue",
+   "options": "Catalogue"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_tree": 1,
+ "links": [],
+ "modified": "2025-12-13 17:18:13.741572",
+ "modified_by": "sebastienmansion88@gmail.com",
+ "module": "GestionCatalogue",
+ "name": "Catalogue",
+ "naming_rule": "By fieldname",
+ "nsm_parent_field": "parent_catalogue",
+ "owner": "sebastienmansion88@gmail.com",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
