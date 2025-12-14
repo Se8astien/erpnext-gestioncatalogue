@@ -136,7 +136,11 @@ app_license = "mit"
 # Document Events
 # ---------------
 # Hook on document methods and events
-
+doc_events = {
+    "Item": {
+        "before_save": "artyfetes.item_hooks.handle_item_before_save"
+    }
+}
 # doc_events = {
 # 	"*": {
 # 		"on_update": "method",
