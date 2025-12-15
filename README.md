@@ -35,7 +35,20 @@ This app can use GitHub Actions for CI. The following workflows are configured:
 - CI: Installs this app and runs unit tests on every push to `develop` branch.
 - Linters: Runs [Frappe Semgrep Rules](https://github.com/frappe/semgrep-rules) and [pip-audit](https://pypi.org/project/pip-audit/) on every pull request.
 
-
 ### License
 
 mit
+
+### Tests Units
+
+Enable tests
+
+```bash
+bench --site erpnext.local set-config allow_tests true
+```
+
+Launch tests
+
+```bash
+bench --site erpnext.local run-tests --doctype "Catalogue"
+```
